@@ -24,12 +24,16 @@ public class Mascota{
     }
 
     public void addEnergia( int energia) {
-        this.Energia = this.Energia + energia;
+        int result = this.Energia + energia;
+        if (result > 100) this.Energia = 100;
+        else this.Energia = result;
         actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
     }
 
     public void addFelicidad( int felicidad) {
-        this.Felicidad = this.Felicidad + felicidad;
+        int result = this.Felicidad + felicidad;
+        if (result > 100) this.Felicidad = 100;
+        else this.Felicidad = result;
         actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
     }
 
@@ -39,7 +43,9 @@ public class Mascota{
     }
 
     public void addSalud( int salud) {
-        this.Salud = this.Salud + salud;
+        int result = this.Salud + salud;
+        if (result > 100) this.Salud = 100;
+        else this.Salud = result;
         actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
     }
 
