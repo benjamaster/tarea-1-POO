@@ -12,14 +12,7 @@ public class Main{
             //System.exit(-1);
         }
 
-        // Guardar el nombre de la mascota en el archivo de configuración (config.csv)
-        /*FileWriter writer = new FileWriter("config.csv");
-        System.out.print("Ingrese el nuevo nombre de la mascota: ");
-        String nombreMascota = new Scanner(System.in).nextLine();
-        writer.write(nombreMascota);
-        writer.close();*/
-
-        //Scanner in = new Scanner(new File(args[0]));
+        //Scanner in = new Scanner(new File(args[0])); //Scanner in original
         Scanner in = new Scanner(new File("config.csv"));
         Main stage1 = new Main();
         // Lectura de archivo config.csv
