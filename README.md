@@ -9,5 +9,4 @@ UseItemInInventory(ID) // Usar item existente en inventario segun ID, si llega a
 TimePass // Cada vez que se utilice un objeto pasara el tiempo de simulacion cada 0.5
 
 // Al pasar una unidad de tiempo los atributos de la mascota cambian
-
-// edad aumenta en 0.5, energia, salud y felicidad disminuyen en 5
+edad aumenta en 0.5, energia, salud y felicidad disminuyen en 5
