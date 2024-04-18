@@ -38,6 +38,7 @@ class Medicina extends Item{
 }
 
 class Juguete extends Item{
+
     public void printItemAplicado(){
 	System.out.println("Usando Juguete"+this.nombre+"...");
     }	
@@ -45,6 +46,12 @@ class Juguete extends Item{
 	pou.addFelicidad(30);
 	this.cantidad = cantidad -1;
     }	    
+=======
+		
+=======
+    /* Completar código de la clase*/
+
+
 }
 
 
