@@ -3,7 +3,7 @@ public abstract class Item {
 
     public abstract void printItemAplicado();
 
-    /* Completar código de la clase xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+    /* Completar código de la clase*/
 }
 
 enum ItemClass{ //actualizarAtributos(this.Salud, this.Energia, this.Felicidad);
