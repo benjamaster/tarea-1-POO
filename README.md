@@ -7,3 +7,5 @@ AddItem //Agregar items al inventario [ID, Nombre, Cantidad] #CLASE NO ABSTRACTA
 UseItem //Usar un item -> Cambiar Stats #CLASE ABSTRACTA
 
 ImpMSJ //Imprimir mensaje segun el clase de item #CLASE ABSTRACTA
+
+aaaaaaaaaaaa
