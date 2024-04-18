@@ -20,7 +20,7 @@ public class Main{
         writer.close();*/
 
         //Scanner in = new Scanner(new File(args[0]));
-        Scanner in = new Scanner(new File("C:/Users/nicol/Documents/POO/Tarea 1/Codigos_Ayuda_tarea1/config.csv"));
+        Scanner in = new Scanner(new File("config.csv"));
         Main stage1 = new Main();
         // Lectura de archivo config.csv
         stage1.readConfiguration(in);
