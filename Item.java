@@ -20,6 +20,14 @@ class Comida extends Item{
 	
 }
 
+class Medicina extends Item{
+	
+}
+
+class Juguete extends Item{
+		
+}
+
 
 
 
