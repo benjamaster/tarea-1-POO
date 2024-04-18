@@ -23,23 +23,23 @@ public class Mascota{
         return Estado;
     }
 
-    public void setEnergia( int energia) {
-        this.Energia = energia;
+    public void addEnergia( int energia) {
+        this.Energia = this.Energia + energia;
         actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
     }
 
-    public void setFelicidad( int felicidad) {
-        this.Felicidad = felicidad;
+    public void addFelicidad( int felicidad) {
+        this.Felicidad = this.Felicidad + felicidad;
         actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
     }
 
-    public void setEdad( int edad) {
-        this.Edad = edad;
+    public void addEdad( int edad) {
+        this.Edad = this.Edad + edad;
         actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
     }
 
-    public void setSalud( int salud) {
-        this.Salud = salud;
+    public void addSalud( int salud) {
+        this.Salud = this.Salud + salud;
         actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
     }
 
