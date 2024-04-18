@@ -1,11 +1,7 @@
-Lista metodos a agregar en Item.java (Stage 2)
+Lista metodos a agregar en Inventario.java (Stage 3)
 
-Item() //Metodo construtor que crea la existencia de items
+Inventario() -> Constructor basado en array list de items
 
-AddItem //Agregar items al inventario [ID, Nombre, Cantidad] #CLASE NO ABSTRACTA (DEFINIDA EN CLASE PADRE)
+AddItemInInventory(ID,Nombre,Cantidad) // agregar item
 
-UseItem //Usar un item -> Cambiar Stats #CLASE ABSTRACTA
-
-ImpMSJ //Imprimir mensaje segun el clase de item #CLASE ABSTRACTA
-
-aaaaaaaaaaaa
+UseItemInInventory(ID) // Usar item existente en inventario segun ID
