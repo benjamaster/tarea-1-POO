@@ -26,6 +26,9 @@ class Medicina extends Item{
 
 class Juguete extends Item{
 		
+=======
+    /* Completar código de la clase*/
+
 }
 
 
