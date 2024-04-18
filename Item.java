@@ -1,10 +1,19 @@
 public abstract class Item {
-
-
+	
+    
     public abstract void printItemAplicado();
 
-    /* Completar código de la clase xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+    private int ID;
+    private int cantidad;
+    private String nombre;			
 }
+
+class Comida extends Item{
+	
+}
+
+
+
 
 enum ItemClass{ //actualizarAtributos(this.Salud, this.Energia, this.Felicidad);
     Comida(20,20,0),
