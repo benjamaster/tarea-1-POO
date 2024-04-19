@@ -37,7 +37,7 @@ public class Main{
             String nombreItem = item_csv[2];
             int cantidad = Integer.parseInt(item_csv[3]);
         
-            inventario.addInv(id, tipoItem, nombreItem, cantidad);
+            // inventario.addInv(id, tipoItem, nombreItem, cantidad);
             /* Completar código para inicialización de inventario en la etapa
             que corresponda */
         }
