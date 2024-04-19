@@ -1,6 +1,6 @@
 public abstract class Item {
 	
-    public item(String name, int new_id){
+    public Item(String name, int new_id){
 	ID= new_id;
 	nombre = name;
 	cantidad = 0;
@@ -10,7 +10,7 @@ public abstract class Item {
     public void add_item(){
 	cantidad = cantidad+1;
     } 	
-    public void 		
+    //public void 		
     private int ID;
     private int cantidad;
     private String nombre;			
