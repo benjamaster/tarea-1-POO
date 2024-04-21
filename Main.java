@@ -37,10 +37,15 @@ public class Main{
             String nombreItem = item_csv[2];
             int cantidad = Integer.parseInt(item_csv[3]);
         
-            inventario.addInv(id, tipoItem, nombreItem, cantidad);
+            inventario.addInv(id, tipoItem, nombreItem, cantidad); //POSIBLE ERROR AddInv NO ESTA EN INVENTARIO Y ES addItem asi que ojo si falla es por esto
             /* Completar código para inicialización de inventario en la etapa
             que corresponda */
             // Se realiza inicializacion Stage 3 -> 
+            // se inicializa los 4 items de prueba
+            inventario.addItem(1,Juguete,Pelota,4);
+            inventario.addItem(2,Comida,Queso,5);
+            inventario.addItem(3,Comida,Pan,3);
+            inventario.addItem(4,Medicina,Jarabe,4);
             
         }
 
@@ -57,6 +62,12 @@ public class Main{
     public void executeAction(Scanner in, PrintStream out){
         /* Completar código con manejo de acciones y menú en las etapas que corresponda
         e incremento del tiempo dependiendo de la etapa */
+        do {
+            System.out.println("Test Mascota Virtual\n");
+            System.out.println("'\nAtributos\n---------\nNombre: " + mascota.Nombre +  "\nEdad:" + mascota.Edad + "\nSalud:" + mascota.Salud + "\nEnergía:" + mascota.Energia + "\nFelicidad:" + mascota.Felicidad + "\nEstado:" + mascota.getEstado().getMensaje());
+            System.out.println("\nAcciones---------\n");
+            
+        } While(mascota.Edad < 15 || mascota.Salud > 0 || mascota.Energia > 0);
     
     }
 
