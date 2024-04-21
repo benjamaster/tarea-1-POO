@@ -67,3 +67,6 @@ public class Main{
     private Mascota mascota;
     // private Inventario inventario; // Descomentar cuando se haya creado el inventario
 }
+
+// ESTO ES PRUEBA DE QUE NO ESTE HACIENDO NADA AAAAAAAAA
+
