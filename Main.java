@@ -37,9 +37,11 @@ public class Main{
             String nombreItem = item_csv[2];
             int cantidad = Integer.parseInt(item_csv[3]);
         
-            // inventario.addInv(id, tipoItem, nombreItem, cantidad);
+            inventario.addInv(id, tipoItem, nombreItem, cantidad);
             /* Completar código para inicialización de inventario en la etapa
             que corresponda */
+            // Se realiza inicializacion Stage 3 -> 
+            
         }
 
         System.out.println("Mascota Virtual\n");
@@ -68,5 +70,5 @@ public class Main{
     // private Inventario inventario; // Descomentar cuando se haya creado el inventario
 }
 
-// ESTO ES PRUEBA DE QUE NO ESTE HACIENDO NADA AAAAAAAAA
+
 
