@@ -37,7 +37,7 @@ public class Mascota{
         actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
     }
 
-    public void addEdad( int edad) {
+    public void addEdad( float edad) {
         this.Edad = this.Edad + edad;
         actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
     }
