@@ -40,6 +40,12 @@ public class Main{
             // inventario.addInv(id, tipoItem, nombreItem, cantidad);
             /* Completar código para inicialización de inventario en la etapa
             que corresponda */
+            // Se realiza inicializacion Stage 3 -> 
+            // se inicializa los 4 items de prueba
+            inventario.addItem(1,Juguete,Pelota,4);
+            inventario.addItem(2,Comida,Queso,5);
+            inventario.addItem(3,Comida,Pan,3);
+            inventario.addItem(4,Medicina,Jarabe,4);
         }
 
         System.out.println("Mascota Virtual\n");
@@ -55,6 +61,37 @@ public class Main{
     public void executeAction(Scanner in, PrintStream out){
         /* Completar código con manejo de acciones y menú en las etapas que corresponda
         e incremento del tiempo dependiendo de la etapa */
+        Scanner scan = new Scanner(System.in);
+        int opcion;
+        float Time = 0;
+        System.out.println("Test Mascota Virtual\n");
+        do {
+            System.out.println("Tiempo Simulado:" + Time);
+            System.out.println("'\nAtributos\n---------\nNombre: " + mascota.Nombre +  "\nEdad:" + mascota.Edad + "\nSalud:" + mascota.Salud + "\nEnergía:" + mascota.Energia + "\nFelicidad:" + mascota.Felicidad + "\nEstado:" + mascota.getEstado().getMensaje());
+            System.out.println("\nAcciones---------\n");
+            inventario.imprimirInventario();
+             System.out.println("\nSeleccione un elemento del inventario:\n");
+            opcion = scan.nextInt();
+
+            switch(opcion){
+                case 1:
+                    //Ocupar item 1
+                    break;
+                case 2: 
+                    //Ocupar item 2
+                    break;
+                case 3:
+                    //Ocupar item 3
+                    break;
+                case 4:
+                    //Ocupar item 4
+                    break;
+            }
+            mascota.addEdad(0.5);
+            Time = Time + 0.5;          
+                          
+            
+        } While(mascota.Edad < 15 || mascota.Salud > 0 || mascota.Energia > 0);
     
     }
 
