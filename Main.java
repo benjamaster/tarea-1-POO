@@ -91,7 +91,7 @@ public class Main{
             Time = Time + 0.5;          
                           
             
-        } While(mascota.Edad < 15 || mascota.Salud > 0 || mascota.Energia > 0);
+        } while(mascota.Edad < 15 || mascota.Salud > 0 || mascota.Energia > 0);
     
     }
 
