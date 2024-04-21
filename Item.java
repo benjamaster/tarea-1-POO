@@ -1,19 +1,30 @@
 public abstract class Item {
 	
-    public Item(String name, int new_id, int cantidad){
+    public Item(String name, int new_id, int cant){
 	   ID= new_id;
 	   nombre = name;
-	   cantidad = 0;
+	   cantidad = cant;
     }	    
     public abstract void printItemAplicado();
     public abstract void usar_item(Mascota pou);
     public void add_item(){
 	cantidad = cantidad+1;
     } 	
-    //public void 		
-    private int ID;
-    private int cantidad;
-    private String nombre;			
+    //public void 	
+    public int getID() {
+        return ID;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }		
+    protected int ID;
+    protected int cantidad;
+    protected String nombre;			
 }
 
 class Comida extends Item{
@@ -21,16 +32,17 @@ class Comida extends Item{
         super(name,new_id,cantidad);
     }
     public void printItemAplicado(){
-	   System.out.println("Dando de comer"+this.nombre+"...");
+	   System.out.println("Dando de comer " +this.nombre+"...");
     }	
     public void usar_item(Mascota pou){
         if (this.cantidad>0) {
             pou.addEnergia(20);
             pou.addSalud(20);
             this.cantidad = cantidad -1;
+            System.out.println("Dando de comer " +this.nombre+"...");
         }
         else{
-            System.out.println("Este item no se encuentra disponible"); 
+            System.out.println("Este item no se encuentra disponible");
         }
     }	    
 }
@@ -40,15 +52,16 @@ class Medicina extends Item{
         super(name,new_id,cantidad);
     }
     public void printItemAplicado(){
-	   System.out.println("Aplicando medicamento"+this.nombre+"...");
+	   System.out.println("Aplicando medicamento " +this.nombre+"...");
     }	
     public void usar_item(Mascota pou){
         if (this.cantidad>0) {
             pou.addSalud(40);
             this.cantidad = cantidad -1; 
+            System.out.println("Aplicando medicamento " +this.nombre+"...");
         }
         else{
-            System.out.println("Este item no se encuentra disponible"); 
+            System.out.println("Este item no se encuentra disponible");
         }
     }	    
 }
@@ -58,17 +71,20 @@ class Juguete extends Item{
         super(name,new_id,cantidad);
     }
     public void printItemAplicado(){
-	   System.out.println("Usando Juguete"+this.nombre+"...");
+	   System.out.println("Usando Juguete " +this.nombre+"...");
     }	
     public void usar_item(Mascota pou){
         if (this.cantidad>0) {
             pou.addFelicidad(30);
             this.cantidad = cantidad -1;
+            System.out.println("Usando Juguete " +this.nombre+"...");
         }
         else{
             System.out.println("Este item no se encuentra disponible");
         }
-    }	    
+    }
+
+
 
     /* Completar código de la clase*/
 
