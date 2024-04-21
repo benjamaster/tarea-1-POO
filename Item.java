@@ -30,7 +30,7 @@ class Comida extends Item{
             this.cantidad = cantidad -1;
         }
         else{
-            System.out.println("Este item no se encuentra disponible")  
+            System.out.println("Este item no se encuentra disponible"); 
         }
     }	    
 }
@@ -48,7 +48,7 @@ class Medicina extends Item{
             this.cantidad = cantidad -1; 
         }
         else{
-            System.out.println("Este item no se encuentra disponible")  
+            System.out.println("Este item no se encuentra disponible"); 
         }
     }	    
 }
@@ -66,7 +66,7 @@ class Juguete extends Item{
             this.cantidad = cantidad -1;
         }
         else{
-            System.out.println("Este item no se encuentra disponible")  
+            System.out.println("Este item no se encuentra disponible");
         }
     }	    
 
