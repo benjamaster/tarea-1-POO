@@ -20,7 +20,7 @@ public class Inventario {
     }
     public void imprimir_inventario() { //Imprimir inventario
         for(Item itemInventario:items){
-            System.out.println(itemInventario.getID() + ": " + itemInventario.getNombre() + " Cantidad " + itemInventario.getCantidad())
+            System.out.println(itemInventario.getID() + ": " + itemInventario.getNombre() + " Cantidad " + itemInventario.getCantidad());
         }
     }  
 }
