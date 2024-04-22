@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.io.FileWriter;
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -12,8 +13,8 @@ public class Main{
             //System.exit(-1);
         }
 
-        Scanner in = new Scanner(new File(args[0])); //Scanner in original
-        //Scanner in = new Scanner(new File("config.csv"));
+        //Scanner in = new Scanner(new File(args[0])); //Scanner in original1
+        Scanner in = new Scanner(new File("config.csv"));
         Main stage1 = new Main();
         // Lectura de archivo config.csv
         stage1.readConfiguration(in, inventario);
@@ -59,14 +60,14 @@ public class Main{
      * @param inventario
      */
     public void executeAction(Scanner in, PrintStream out, Inventario inventario){
-        /* Completar código con manejo de acciones y menú en las etapas que corresponda
-        e incremento del tiempo dependiendo de la etapa */
         Scanner scan = new Scanner(System.in);
         char opcion;
         float Time = 0;
         int flag =1;
+        //Hud
         System.out.println("Test Mascota Virtual\n");
         do {
+            guardarDatosCSV(Time, mascota ,"Datos");
             System.out.println("Tiempo Simulado:" + Time);
             System.out.println("\nAtributos\n---------\nNombre: " + mascota.Nombre +  "\nEdad:" + mascota.Edad + "\nSalud:" + mascota.Salud + "\nEnergía:" + mascota.Energia + "\nFelicidad:" + mascota.Felicidad + "\nEstado:" + mascota.getEstado().getMensaje());
             if(mascota.getEstado().getMensaje() == "(x_x) fin del juego (Muerto)"){
@@ -78,7 +79,8 @@ public class Main{
             System.out.println("Seleccione un elemento del inventario, 'c' para continuar, y 'x' para salir:");
             System.out.println("\nSeleccione un elemento del inventario:");
             opcion = scan.next().charAt(0);
-
+            
+            //Acciones
             if (opcion == '0'){
                 mascota.addEnergia(100);
                 mascota.addFelicidad(15);
@@ -114,6 +116,8 @@ public class Main{
             if (flag == 0){
                 return;
             }
+
+            //Cambio de atributos segun el valor de estos
             mascota.addEdad(0.5f);
             Time = Time + 0.5f;
             if(mascota.Edad <= 5 && mascota.Salud <= 10){
@@ -152,6 +156,30 @@ public class Main{
         /* Completar método que muestra el estado de la Mascota y del inventario
         dependiendo de la etapa */
 
+    }
+
+    public void guardarDatosCSV(float tiempo, Mascota pet ,String name) {
+        String nombreArchivo = name + ".csv";
+
+        try (FileWriter writer = new FileWriter(nombreArchivo, true)) {
+            if (tiempo == 0){
+                limpiarArchivo(nombreArchivo);
+                writer.write("Tiempo" + ";" + "Edad" + ";" + "Salud" + ";" + "Energia" + ";" + "Felicidad" + "\n");
+            }
+            // Escribir los datos de la mascota en el archivo CSV
+            writer.write(tiempo + ";" + pet.Edad + ";" + pet.Salud + ";" + pet.Energia + ";" + pet.Felicidad + "\n");
+        } catch (IOException e) {
+            System.out.println("Error al escribir en el archivo CSV: " + e.getMessage());
+        }
+    }
+
+    public void limpiarArchivo(String nombreArchivo) {
+        try (FileWriter writer = new FileWriter(nombreArchivo)) {
+            // Limpiar el contenido del archivo
+            writer.write("");
+        } catch (IOException e) {
+            System.out.println("Error al limpiar el archivo CSV: " + e.getMessage());
+        }
     }
 
     private Mascota mascota;
