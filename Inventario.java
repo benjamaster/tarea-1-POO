@@ -18,5 +18,10 @@ public class Inventario {
     public ArrayList<Item> getItems() { // Método para obtener todos los Items del inventario
         return Item;
     }
+    public void imprimir_inventario() { //Imprimir inventario
+        for(Item itemInventario:Item){
+            System.out.println(itemInventario.getID() + ": " + itemInventario.getNombre() + " Cantidad " + itemInventario.getCantidad());
+        }
+    } 
 }
 
