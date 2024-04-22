@@ -80,9 +80,7 @@ public class Main{
             opcion = scan.next().charAt(0);
 
             if (opcion == '0'){
-                mascota.addEnergia(100);
-                mascota.addFelicidad(15);
-                mascota.addSalud(15);
+                mascota.dormir()
                 System.out.println("\nA Dormir!! (v,v) zzz...");
             }
             else if(opcion =='x'){
@@ -116,28 +114,12 @@ public class Main{
             }
             mascota.addEdad(0.5f);
             Time = Time + 0.5f;
-            if(mascota.Edad <= 5 && mascota.Salud <= 10){
-                mascota.addEnergia(-5);
-                mascota.addSalud(-5);   
-                mascota.addFelicidad(-20);
-            }
-            else if(mascota.Edad <=10 && mascota.Edad > 5 && mascota.Salud <= 50){
-                mascota.addEnergia(-10);
-                mascota.addSalud(-5);   
-                mascota.addFelicidad(-20);
-
-            }
-            else if(mascota.Edad > 10 && mascota.Salud <= 50){
-                mascota.addEnergia(-20);
-                mascota.addSalud(-5);   
-                mascota.addFelicidad(-30);
-
-            }
-            else{
-                mascota.addEnergia(-5);
-                mascota.addSalud(-5);   
-                mascota.addFelicidad(-5);
-            }
+            mascota.addEdad(0.5f);
+            Time = Time + 0.5f;
+            mascota.actualizarParametros();
+            mascota.addSalud(-5);
+            mascota.addFelicidad(-5);
+            mascota.addEnergía(-5);
             
 
                           
