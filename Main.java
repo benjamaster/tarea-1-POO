@@ -80,7 +80,34 @@ public class Main{
             System.out.println("\nSeleccione un elemento del inventario:");
             opcion = scan.next().charAt(0);
 
-            switch(opcion){
+            if (opcion == '0'){
+                mascota.addEnergia(100);
+                mascota.addFelicidad(15);
+                mascota.addSalud(15);
+            }
+            else if(opcion =='x'){
+                flag = 0;
+            }
+            else if(opcion =='c'){
+                System.out.println("\nContinuando turno.");
+            }
+            else{
+                try{
+                    Item itemSeleccionado = inventario.getItems().get(opcion-1);
+                    if (itemSeleccionado.cantidad > 1){
+                        itemSeleccionado.usar_item(mascota);
+                    }
+                    else{
+                        itemSeleccionado.usar_item(mascota);
+                        inventario.eliminarItem(itemSeleccionado);
+                    }
+                }
+            }
+            catch(Exception e){
+                System.out.println("\nNumero no valido, Saltando turno...");
+            }
+            
+            /*switch(opcion){
                 case '0':
                     mascota.addEnergia(100);
                     mascota.addFelicidad(15);
@@ -116,7 +143,7 @@ public class Main{
                 case 'x':
                     flag = 0;
                     break;
-            }
+            }*/
             if (flag == 0){
                 return;
             }
