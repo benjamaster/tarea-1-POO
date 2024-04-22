@@ -10,11 +10,11 @@ public class Main{
         Inventario inventario = new Inventario();
         if (args.length != 1) {
             System.out.println("Usage: java Stage1 <config.csv>");
-            //System.exit(-1);
+            System.exit(-1);
         }
 
-        //Scanner in = new Scanner(new File(args[0])); //Scanner in original1
-        Scanner in = new Scanner(new File("config.csv"));
+        Scanner in = new Scanner(new File(args[0])); //Scanner in original1
+        //Scanner in = new Scanner(new File("config.csv"));
         Main stage1 = new Main();
         // Lectura de archivo config.csv
         stage1.readConfiguration(in, inventario);
