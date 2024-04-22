@@ -37,40 +37,21 @@ public class Main{
             String nombreItem = item_csv[2];
             int cantidad = Integer.parseInt(item_csv[3]);
         
-            // inventario.addInv(id, tipoItem, nombreItem, cantidad);
-            /* Completar código para inicialización de inventario en la etapa
-            que corresponda */
-            // Se realiza inicializacion Stage 3 -> 
-            // se inicializa los 4 items de prueba
-           /*  inventario.addInv(1,"Juguete","Pelota",4);
-            inventario.addInv(2,"Comida","Queso",5);
-            inventario.addInv(3,"Comida","Pan",3);
-            inventario.addInv(4,"Medicina","Jarabe",4);*/
+            if (tipoItem.equals("Juguete")){
+                Item item_juguete = new Juguete(nombreItem,id,cantidad);
+                System.out.println("tipo item:" + tipoItem + " Largo:" + tipoItem.length());
+                inventario.addItem(item_juguete);
+            }
+            else if (tipoItem.equals("Comida")){
+                Item item_comida = new Comida(nombreItem,id,cantidad);
+                inventario.addItem(item_comida);
+            }
+            else if (tipoItem.equals("Medicina")){
+                Item item_medicina = new Medicina(nombreItem,id,cantidad);
+                inventario.addItem(item_medicina);
+            }
 
         }
-
-        // Crear algunos elementos
-        Item item1 = new Juguete("Pelota", 1, 4);
-        Item item2 = new Comida("Queso", 2, 5);
-        Item item3 = new Comida("Pan", 3, 3);
-        Item item4 = new Medicina("Jarabe", 4, 4);
-
-        // Agregar los elementos al inventario
-        inventario.addItem(item1);
-        inventario.addItem(item2);
-        inventario.addItem(item3);
-        inventario.addItem(item4);
-
-        /* 
-        System.out.println("Mascota Virtual\n");
-        System.out.println("'\nAtributos\n---------\nNombre: " + mascota.Nombre +  "\nEdad:" + mascota.Edad + "\nSalud:" + mascota.Salud + "\nEnergía:" + mascota.Energia + "\nFelicidad:" + mascota.Felicidad + "\nEstado:" + mascota.getEstado().getMensaje());
-        mascota.addFelicidad(50);
-        System.out.println("'\nAtributos\n---------\nNombre: " + mascota.Nombre +  "\nEdad:" + mascota.Edad + "\nSalud:" + mascota.Salud + "\nEnergía:" + mascota.Energia + "\nFelicidad:" + mascota.Felicidad + "\nEstado:" + mascota.getEstado().getMensaje());
-        mascota.addEnergia(-90);
-        System.out.println("'\nAtributos\n---------\nNombre: " + mascota.Nombre +  "\nEdad:" + mascota.Edad + "\nSalud:" + mascota.Salud + "\nEnergía:" + mascota.Energia + "\nFelicidad:" + mascota.Felicidad + "\nEstado:" + mascota.getEstado().getMensaje());
-        mascota.addEnergia(150);
-        System.out.println("'\nAtributos\n---------\nNombre: " + mascota.Nombre +  "\nEdad:" + mascota.Edad + "\nSalud:" + mascota.Salud + "\nEnergía:" + mascota.Energia + "\nFelicidad:" + mascota.Felicidad + "\nEstado:" + mascota.getEstado().getMensaje());
-        */
     }
     
     /**
