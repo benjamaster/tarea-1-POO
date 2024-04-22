@@ -90,29 +90,10 @@ public class Main{
         
             mascota.addEdad(0.5f);
             Time = Time + 0.5f;
-            if(mascota.Edad <= 5 && mascota.Salud <= 10){
-                mascota.addEnergia(-5);
-                mascota.addSalud(-5);   
-                mascota.addFelicidad(-20);
-            }
-            else if(mascota.Edad <=10 && mascota.Edad > 5 && mascota.Salud <= 50){
-                mascota.addEnergia(-10);
-                mascota.addSalud(-5);   
-                mascota.addFelicidad(-20);
-
-            }
-            else if(mascota.Edad > 10 && mascota.Salud <= 50){
-                mascota.addEnergia(-20);
-                mascota.addSalud(-5);   
-                mascota.addFelicidad(-30);
-
-            }
-            else{
-                mascota.addEnergia(-5);
-                mascota.addSalud(-5);   
-                mascota.addFelicidad(-5);
-            } 
-
+            mascota.actualizarParametros();
+            mascota.addSalud(-5);
+            mascota.addFelicidad(-5);
+            mascota.addEnergía(-5);
                           
             
         } while(mascota.Edad <= 15 || mascota.Salud > 0 || mascota.Energia > 0);
