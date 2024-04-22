@@ -67,7 +67,25 @@ public class Mascota{
             this.Estado = Estado.Neutro; // Si no cumple ninguna condición, el estado es neutro
         }
     }
-
+    public void actualizarParametros(){
+        if (this.Edad <= 5 && this.Salud <= 10){
+            this.Felicidad = Math.max(this.Felicidad - 20,0);
+        }
+        else if (this.Edad >5 && this.Edad <=10 && this.Salud <= 50){
+            this.Felicidad = Math.max(this.Felicidad - 20,0);
+            this.Energia = Math.max(this.Energia - 10,0);
+        }
+        else if (this.Edad > 10 && this.Salud <=50){
+            this.Felicidad = Math.max(this.Felicidad - 30,0);
+            this.Energia = Math.max(this.Energia - 20,0);
+        }
+        actualizarEstado(this.Edad, this.Salud, this.Energia, this.Felicidad);
+    }
+    public void dormir(){
+        this.Energia = 100;
+        addFelicidad(15);
+        addSalud(15);
+    }
     private Estado Estado;
     public String Nombre;
     public float Edad;
