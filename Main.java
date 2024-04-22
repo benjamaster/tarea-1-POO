@@ -88,6 +88,9 @@ public class Main{
         do {
             System.out.println("Tiempo Simulado:" + Time);
             System.out.println("\nAtributos\n---------\nNombre: " + mascota.Nombre +  "\nEdad:" + mascota.Edad + "\nSalud:" + mascota.Salud + "\nEnergía:" + mascota.Energia + "\nFelicidad:" + mascota.Felicidad + "\nEstado:" + mascota.getEstado().getMensaje());
+            if(mascota.getEstado().getMensaje() == "(x_x) fin del juego (Muerto)"){
+                return;        
+            }
             System.out.println("\nAcciones---------\n");
             inventario.imprimir_inventario();
             System.out.println("\nSeleccione un elemento del inventario:");
@@ -121,13 +124,32 @@ public class Main{
             }
             mascota.addEdad(0.5f);
             Time = Time + 0.5f;
-            mascota.addEnergia(-5);
-            mascota.addSalud(-5);   
-            mascota.addFelicidad(-5); 
+            if(mascota.Edad <= 5 && mascota.Salud <= 10){
+                mascota.addEnergia(-5);
+                mascota.addSalud(-5);   
+                mascota.addFelicidad(-20);
+            }
+            else if(mascota.Edad <=10 && mascota.Edad > 5 && mascota.Salud <= 50){
+                mascota.addEnergia(-10);
+                mascota.addSalud(-5);   
+                mascota.addFelicidad(-20);
+
+            }
+            else if(mascota.Edad > 10 && mascota.Salud <= 50){
+                mascota.addEnergia(-20);
+                mascota.addSalud(-5);   
+                mascota.addFelicidad(-30);
+
+            }
+            else{
+                mascota.addEnergia(-5);
+                mascota.addSalud(-5);   
+                mascota.addFelicidad(-5);
+            } 
 
                           
             
-        } while(mascota.Edad < 15 || mascota.Salud > 0 || mascota.Energia > 0);
+        } while(mascota.Edad <= 15 || mascota.Salud > 0 || mascota.Energia > 0);
 
         scan.close(); //cerrar instancia scan despues de utilizar
     
