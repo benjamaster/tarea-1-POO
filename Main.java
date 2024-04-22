@@ -96,7 +96,14 @@ public class Main{
             else if(opcion >= '1' && opcion <= '9'){
                 int numero = opcion - '0';
                 try{
-                    Item itemSeleccionado = inventario.getItems().get(numero-1);
+                    Item itemSeleccionado = null;
+                    //Item itemSeleccionado = inventario.getItems().get(numero-1);
+                    for (Item itemBuscar : inventario.getItems()) {
+                        if (itemBuscar.getID() == numero) {
+                            itemSeleccionado = itemBuscar;
+                            break; // Detener la iteración una vez que se encuentra el Item con la Id específica
+                        }
+                    }
                     if (itemSeleccionado.cantidad > 1){
                         itemSeleccionado.usar_item(mascota);
                     }

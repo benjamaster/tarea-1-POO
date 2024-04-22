@@ -21,9 +21,9 @@ public class Inventario {
     public void imprimir_inventario() { //Imprimir inventario
         int i = 1;
         for(Item itemInventario:Item){
-            System.out.println(i + ": " + itemInventario.getNombre() + " Cantidad " + itemInventario.getCantidad() + " (ID:"+itemInventario.getID()+")");
+            //System.out.println(i + ": " + itemInventario.getNombre() + " Cantidad " + itemInventario.getCantidad() + " (ID:"+itemInventario.getID()+")");
             i +=1;
-            //System.out.println(itemInventario.getID() + ": " + itemInventario.getNombre() + " Cantidad " + itemInventario.getCantidad());
+            System.out.println(itemInventario.getID() + ": " + itemInventario.getNombre() + " Cantidad " + itemInventario.getCantidad());
         }
     } 
 }
