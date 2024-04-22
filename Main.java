@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -13,8 +12,8 @@ public class Main{
             //System.exit(-1);
         }
 
-        //Scanner in = new Scanner(new File(args[0])); //Scanner in original
-        Scanner in = new Scanner(new File("config.csv"));
+        Scanner in = new Scanner(new File(args[0])); //Scanner in original
+        //Scanner in = new Scanner(new File("config.csv"));
         Main stage1 = new Main();
         // Lectura de archivo config.csv
         stage1.readConfiguration(in, inventario);
@@ -84,6 +83,7 @@ public class Main{
                 mascota.addEnergia(100);
                 mascota.addFelicidad(15);
                 mascota.addSalud(15);
+                System.out.println("\nA Dormir!! (v,v) zzz...");
             }
             else if(opcion =='x'){
                 flag = 0;
@@ -91,9 +91,10 @@ public class Main{
             else if(opcion =='c'){
                 System.out.println("\nContinuando turno.");
             }
-            else{
+            else if(opcion >= '1' && opcion <= '9'){
+                int numero = opcion - '0';
                 try{
-                    Item itemSeleccionado = inventario.getItems().get(opcion-1);
+                    Item itemSeleccionado = inventario.getItems().get(numero-1);
                     if (itemSeleccionado.cantidad > 1){
                         itemSeleccionado.usar_item(mascota);
                     }
@@ -102,48 +103,14 @@ public class Main{
                         inventario.eliminarItem(itemSeleccionado);
                     }
                 }
+                catch(Exception e){
+                    System.out.println("\nNumero no valido, Saltando turno...");
+                }
             }
-            catch(Exception e){
-                System.out.println("\nNumero no valido, Saltando turno...");
+            else{
+                System.out.println("\nAccion no valida, Saltando turno...");
             }
             
-            /*switch(opcion){
-                case '0':
-                    mascota.addEnergia(100);
-                    mascota.addFelicidad(15);
-                    mascota.addSalud(15);
-                    break;
-                case '1':
-                    //Ocupar item 1
-                    Item itemSeleccionado = inventario.getItems().get(0);
-                    itemSeleccionado.usar_item(mascota);
-                    //itemSeleccionado.printItemAplicado();//Arreglar Sigue apareciendo que juega a pesar de no estar disponible
-                    break;
-                case '2': 
-                    //Ocupar item 2
-                    Item itemSeleccionado2 = inventario.getItems().get(1);
-                    itemSeleccionado2.usar_item(mascota);
-                    //itemSeleccionado2.printItemAplicado();
-                    break;
-                case '3':
-                    //Ocupar item 3
-                    Item itemSeleccionado3 = inventario.getItems().get(2);
-                    itemSeleccionado3.usar_item(mascota);
-                   // itemSeleccionado3.printItemAplicado();
-                    break;
-                case '4':
-                    //Ocupar item 4
-                    Item itemSeleccionado5 = inventario.getItems().get(3);
-                    itemSeleccionado5.usar_item(mascota);
-                    //itemSeleccionado5.printItemAplicado();
-                    break;
-                case 'c':
-                    // aqui no pasa nada solo avanza
-                    break;
-                case 'x':
-                    flag = 0;
-                    break;
-            }*/
             if (flag == 0){
                 return;
             }
