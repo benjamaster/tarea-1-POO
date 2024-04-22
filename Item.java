@@ -4,7 +4,8 @@ public abstract class Item {
 	   ID= new_id;
 	   nombre = name;
 	   cantidad = cant;
-    }	    
+    }	 
+       
     public abstract void printItemAplicado();
     public abstract void usar_item(Mascota pou);
     public void add_item(){
@@ -83,11 +84,6 @@ class Juguete extends Item{
             System.out.println("Este item no se encuentra disponible");
         }
     }
-
-
-
-    /* Completar código de la clase*/
-
 
 }
 
