@@ -1,11 +1,21 @@
-# Regla para compilar Main.java
-compile:
-	javac Main.java
+JFLAGS = -g
+JC = javac
+JVM = java
+FILE = config.csv
+.SUFFIXES: .java .class
+.java.class:
+	$(JC) $(JFLAGS) $*.java
 
-# Regla para ejecutar Main con el parámetro "config.csv"
-run: compile
-	java Main config.csv
+CLASSES = Main.java Estado.java Inventario.java Item.java Mascota.java 
 
-# Regla para limpiar los archivos .class
+MAIN = Main
+
+default: classes
+
+classes: $(CLASSES:.java=.class)
+
+run: $(MAIN).class
+	$(JVM) $(MAIN) $(FILE)
+
 clean:
-	rm -f *.class
+	$(RM) *.class
